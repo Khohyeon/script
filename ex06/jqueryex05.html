@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>회원가입 비밀번호 유효성 검사 (프론트)</h1>
+    <hr>
+    <form action="/join" method="post" onsubmit="return valid()">
+        <input id="password" name="password" type="text" value="" placeholder="Enter password" required><br>
+        <input id="passwordCheck" type="text" value="" placeholder="Enter same password" required><br>
+        <button type="submit">회원가입</button>
+    </form>
+    <script>
+        function valid() {
+            if ($("#password").val() == $("#passwordCheck").val()) {
+                return true;
+            }
+            alert("password가 일치 하지 않습니다.");
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>

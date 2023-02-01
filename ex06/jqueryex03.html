@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        div {
+            border: 1px solid black;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>댓글 페이지</h1>
+    <hr>
+    <div id="comment-box">
+        <div id="c-5">댓글5 입니다.</div>
+        <div id="c-4">댓글4 입니다.</div>
+        <div id="c-3">댓글3 입니다.</div>
+        <div id="c-2">댓글2 입니다.</div>
+        <div id="c-1">댓글1 입니다.</div>
+    </div>
+    <button onclick="btn1()">prepend</button>
+    <button onclick="btn2()">append</button>
+    <button onclick="btn3()">before</button>
+    <button onclick="btn4()">after</button>
+    <button onclick="btn5()">c2Delete</button>
+    <button onclick="btn6()">empty</button>
+
+    <script>
+        function btn1() {  // 바닐라
+            $("#comment-box").prepend('<div id="c-6">댓글6 입니다.</div>') // 제이쿼리
+        }
+        function btn2() {  // 바닐라
+            $("#comment-box").append('<div id="c-7">댓글7 입니다.</div>') // 제이쿼리
+        }
+        function btn3() {  // 바닐라
+            $("#comment-box").before('<div id="c-8">댓글8 입니다.</div>') // 제이쿼리
+        }
+        function btn4() {  // 바닐라
+            $("#comment-box").after('<div id="c-9">댓글9 입니다.</div>') // 제이쿼리
+        }
+        function btn5() {  // 바닐라
+            $("#c-2").remove() // 제이쿼리
+        }
+        function btn6() {
+            $("#comment-box").empty()
+        }
+    </script>
+</body>
+
+</html>

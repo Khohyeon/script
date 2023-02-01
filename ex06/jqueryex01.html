@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <p>Demonstrate fadeIn() with different parameters.</p>
+
+    <button id="btn1">Click to fade in boxes</button><br><br>
+    <button id="btn2">Click to fade out boxes</button><br><br>
+
+    <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+    <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+    <div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+
+    <script>
+        $("#btn2").click(function () {
+            $("#div1").fadeOut(1000); // 1초 뒤에 없애다
+            $("#div2").fadeOut("slow"); // 천천히 없애다
+            $("#div3").fadeOut(); // 없애다
+        });
+
+        $("#btn1").click(function () {
+            $("#div1").fadeIn(); // 나오게 하다
+            $("#div2").fadeIn("slow"); // 천천히 나오게 하다
+            $("#div3").fadeIn(3000); // 3초 뒤에 나오게 하다
+        });
+    </script>
+</body>
+
+</html>

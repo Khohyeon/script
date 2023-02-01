@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/54f6e58dac.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/54f6e58dac.css" crossorigin="anonymous">
+    <style>
+        .my-xl {
+            font-size: 150px;
+        }
+
+        .my-cursor {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <i id="heart" class="fa-regular fa-heart my-xl my-cursor" value="ok"></i>
+
+    <script>
+        $("#heart").click(() => {
+            let value = $("#heart").val();
+            if (value == "ok") {
+                $("#heart").removeClass("fa-solid");
+                $("#heart").val("no");
+            } else {
+                $("#heart").addClass("fa-solid");
+                $("#heart").val("ok");
+            }
+            // let value = $("#heart").hasClass("fa-solid");
+            // if (value) {
+            //     $("#heart").removeClass("fa-regular");
+            // }
+            // $("#heart").addClass("fa-solid");
+            // $("#heart").toggleClass("fa-solid");
+            // $("#heart").removeClass("fa-regular");
+            // $("#heart").addClass("fa-solid");
+        });
+    </script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/54f6e58dac.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/54f6e58dac.css" crossorigin="anonymous">
+    <style>
+        .my-xl {
+            font-size: 150px;
+        }
+
+        .my-cursor {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <i id="heart" class="fa-regular fa-heart my-xl my-cursor" value="ok"></i>
+
+    <script>
+        $("#heart").click(() => {
+            let value = $("#heart").val();
+            if (value == "ok") {
+                $("#heart").removeClass("fa-solid");
+                $("#heart").val("no");
+            } else {
+                $("#heart").addClass("fa-solid");
+                $("#heart").val("ok");
+            }
+            // let value = $("#heart").hasClass("fa-solid");
+            // if (value) {
+            //     $("#heart").removeClass("fa-regular");
+            // }
+            // $("#heart").addClass("fa-solid");
+            // $("#heart").toggleClass("fa-solid");
+            // $("#heart").removeClass("fa-regular");
+            // $("#heart").addClass("fa-solid");
+        });
+    </script>
+</body>
+
+</html>
