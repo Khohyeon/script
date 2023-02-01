@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>로그인</h1>
+    <hr>
+    <form>
+        <input type="text" id="username" placeholder="Enter username"><br />
+        <input type="text" id="password" placeholder="Enter password"><br />
+        <button type="button" onclick="login()">로그인</button>
+    </form>
+
+    <script>
+        async function login() {
+            let loginDto = {
+                username: document.querySelector("#username").value,
+                password: document.querySelector("#password").value
+            };
+
+            let response = await fetch("http://localhost:8080/login", {
+                method: "post",
+                body: JSON.stringify(loginDto),
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                }
+            });
+
+            for (let [key, value] of response.headers) {
+                console.log(`${key} = ${value}`);
+            }
+
+            let jwtToken = "";
+            if (response.status == 200) {
+                jwtToken = response.headers.get("Authorization");
+            } else {
+                alert("로그인 실패");
+            }
+
+            let responseParse = await response.json();
+            console.log(responseParse);
+            if (responseParse.code == 1) {
+                localStorage.setItem("jwtToken", jwtToken);
+                alert("로그인 성공");
+                location.href = "list.html";
+            } else {
+                alert("로그인 실패");
+            }
+        }
+    </script>
+</body>
+
+</html>

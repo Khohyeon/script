@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <div id="post-1">
+            <div>1</div>
+            <div>ssar</div>
+        </div>
+        <div id="post-2">
+            <div>2</div>
+            <div>cos</div>
+        </div>
+    </div>
+    <script>
+        let el = document.querySelector("#post-1");
+        let child = el.children; // child에 #post-1의 데이터를 배열로 받아온다.
+        console.log(el);
+        console.log(child[0]);
+        console.log(child[1]);
+        let nextEl = el.nextElementSibling; // #post-1 다음의 자료를 저장한다.
+        let nextChild = nextEl.children; // nextChild에 #post-2의 데이터를 배열로 받아온다.
+        console.log(nextEl);
+        console.log(nextChild[0]);
+        console.log(nextChild[1]);
+    </script>
+</body>
+
+</html>

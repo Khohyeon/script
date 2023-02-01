@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <h1>게시글 목록</h1>
+    <hr>
+    <button onclick="logout()">로그아웃</button>
     <div id="postBox">
         <table id="postBox-table" border="1">
             <tr>
@@ -20,16 +23,24 @@
         </table>
     </div>
 
-    <button onclick="down()">다운로드</button>
+
 
     <script>
+        function logout() {
+            localStorage.removeItem("jwtToken");
+            location.reload();
+        }
+
         async function down() {
-            let response = await fetch("http://192.168.200.58:8080/init/post", {
-                method: "get"
+            let jwtToken = localStorage.getItem("jwtToken");
+
+            let response = await fetch("http://192.168.200.58:8080/post", {
+                method: "get",
+                headers: {
+                    "Authorization": jwtToken
+                }
             });
             let jsObject = await response.json();
-            //console.log(jsObject);
-            //console.log(jsObject.data[0].title);
             render(jsObject);
         }
 
@@ -44,14 +55,14 @@
         function makeTr(post) {
             let tr = document.createElement("tr");
             tr.innerHTML = `
-                <td>${post.id}</td> 
+                <td>${post.id}</td>
                 <td>${post.title}</td>
                 <td>${post.content}</td>
                 <td>${post.user.username}</td>
             `;
             return tr;
         }
-
+        down();
 
     </script>
 
